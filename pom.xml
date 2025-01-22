@@ -2,98 +2,53 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent> 
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.8.RELEASE</version>
+		<version>3.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cicd</groupId>
 	<artifactId>cicd-applied-to-spring-boot-java-app</artifactId>
-	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cicd-applied-to-spring-boot-java-app</name>
 	<description>Implementing CI/CD on Spring Boot Java App</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
-	
-		
-      	<!-- solving error : Invalid or corrupt jarfile /app.jar -->
-      
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-		
-		<!-- property useful for  spotify's dockerfile-maven-plugin -->
-		
-		<!-- Instead of "fanjups", please add your Docker Hub username -->
-		
-		
-		<!--Not adding artifacts to remote repository-->
-	
-		<!-- GitHub OAuth token & server -->
-	
-        <!-- Useful for Heroku Deployment -->
-        
-			
-			<!-- spotify's dockerfile-maven-plugin -->
-		
-        	<!-- maven-dependency-plugin useful for creating docker image -->
-        	
-        	<plugin>
-		     
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-dependency-plugin</artifactId>
-			    <executions>
-			        <execution>
-			            <id>unpack</id>
-			            <phase>package</phase>
-			            <goals>
-			                <goal>unpack</goal>
-			            </goals>
-			            <configuration>
-			                <artifactItems>
-			                    <artifactItem>
-			                        <groupId>${project.groupId}</groupId>
-			                        <artifactId>${project.artifactId}</artifactId>
-			                        <version>${project.version}</version>
-			                    </artifactItem>
-			                </artifactItems>
-			            </configuration>
-			        </execution>
-				
-	 
-			    </executions>
-		    
-       		</plugin>
-       		
-       		<!-- jacoco-maven-plugin useful for Codecov -->
-       		
-       		<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.12</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
-			<!-- Generating github  gh pages & maven project documents  -->
-            
-			
-			<!-- Useful for Heroku Deployment -->
-			
-		
-	
-	
-	<!-- Useful for GitHub site  -->
+		</plugins>
+	</build>
 
 </project>
