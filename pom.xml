@@ -70,5 +70,12 @@
 
 		</plugins>
 	</build>
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>jfrog-server-releases</name>
+        <url>http://192.168.95.73:8081/artifactory/hdbfs-libs-release-local/</url>
+    </repository>
+</distributionManagement>
 
 </project>
